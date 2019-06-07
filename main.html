@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class Teacher</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+    <link rel="stylesheet" href="css/pure.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="img/A/a.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    <script src='js/data.js'></script>
+</head>
+<body>
+
+
+    <header>
+        <div class="flexItem homeButton"><a href="main.html"><img src="commonImg/home.png" alt="" class="icons"></a></div>
+        <div class="flexItem headerText"><h1></h1></div>
+        <div class="flexItem logoImg">
+        <a href="#" class="logo"><img src="commonImg/logo.png" alt=""></a>
+        </div>
+    </header>
+
+    <div id="puzzle-containment" style="">
+        <div class="pure-g" style="max-width:1280px;margin:auto">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div id="imgContainer" style="margin:10px">
+                   <img id="source_image" class="pure-img" src="img/A/image.jpg">
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div id="pile" style="margin:10px">
+                    <div id="puzzle_solved" style="text-align:center;position:relative; padding-top:30px; display: none">
+                        <img src="img/A/a.png" alt="" id="letterImg">
+                        <img id='Animate' src="commonImg/welldone.png">
+                        <h2 id="h2" style="margin-top:30px; font-weight: bold;font-size:3em;color:green">Well done!
+                        <img src="commonImg/ajax-loader.gif">
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                        <!-- <p class="links">
+                            <a href="">
+                                <img src="commonImg/back.png" alt="" class="icons">
+                            </a>
+                            <a href="">
+                                <img src="commonImg/reload.png" alt="" class="icons">
+                            </a>
+                            <a href="">
+                                <img src="commonImg/prev.png" alt="" class="icons">
+                            </a>
+                        </p>
+
+                    <div class="pageLinks">
+                        <p>
+                            <a href="#" class="active"><img src="commonImg/036-letter-a.svg" alt="" class="animated bounce slow infinite"></a>
+                            <a href="#"><img src="commonImg/035-letter-b.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/034-letter-c.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/033-letter-d.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/032-letter-e.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/031-letter-f.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/030-letter-g.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/029-letter-h.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/028-letter-i.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/027-letter-j.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/026-letter-k.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/025-letter-l.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/024-letter-m.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/023-letter-n.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/022-letter-o.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/021-letter-p.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/020-letter-q.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/019-letter-r.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/018-letter-s.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/017-letter-t.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/016-letter-u.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/015-letter-v.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/014-letter-w.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/013-letter-x.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/012-letter-y.svg" alt=""></a>
+                            <a href="#"><img src="commonImg/011-letter-z.svg" alt=""></a>
+                        </p>
+                    </div> -->
+   <!-- play audio -->
+   <!--  <audio controls id="audio">
+      <source src="4457.ogg" type="audio/ogg">
+      <source src="4457.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio> -->
+    <!-- play audio -->
+
+
+    <div class="bgColor">
+       <ul>
+           <li id='back1'><img src="commonImg/back1.png" alt=""></li>
+           <li id='back2'><img src="commonImg/back2.png" alt=""></li>
+           <li id='back3'><img src="commonImg/back3.png" alt=""></li>
+           <li id='back4'><img src="commonImg/back4.png" alt=""></li>
+           <li></li>
+       </ul>
+    </div>
+   
+    <div id="fb-root"></div>
+    <script src="js/jquery.js"></script>
+    <script src="js/jqueryui.js"></script>
+    <script src="js/jquery.snap-puzzle.js"></script>
+    <script>
+
+        var x =2;
+        var y =2;
+        // jQuery UI Touch Punch 0.2.3 - must load after jQuery UI
+        // enables touch support for jQuery UI
+        !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+
+        function start_puzzle(x,y){
+            $('#puzzle_solved').hide();
+            $('#source_image').snapPuzzle({
+                rows: x, columns: y,
+                pile: '#pile',
+                containment: '#puzzle-containment',
+                onComplete: function(){
+                    $('#source_image').fadeOut(150).fadeIn();
+                    $('#puzzle_solved').show(1000);
+                    $('.snappuzzle-piece').css({'display':'none'});
+                    var audio = new Audio('audio/4457.mp3');
+                    audio.play();
+
+                    // audio clip
+
+                    setTimeout(function(){
+
+                       if(x==3 && y==3){
+                        var audioClip1= new Audio('img/A/audioClip3.mp3');
+                          audioClip1.play();
+                      }
+
+                      if(x==2 && y==3){
+                        var audioClip1= new Audio('img/A/audioClip2.mp3');
+                          audioClip1.play();
+                      }
+
+                        if(x==2 && y==2){
+
+                          var audioClip1= new Audio('img/A/audioClip1.mp3');
+                          audioClip1.play();
+
+                        }
+
+                    },3000);
+
+                  
+
+                    setTimeout(function(){
+
+
+                      // console.log("X"+x+"y"+y+"type of "+typeof x)
+                      if(x==3 && y==3){
+                          $('#h2').html("Congratulation, you solved all the puzzles");
+
+                          
+
+                          // $('.links').show();
+                          $('#Animate').addClass('animateImg');
+                          setTimeout(function(){
+                               $('#h2').hide();
+                              // $('.links').hide();
+                              $('#Animate').hide();
+                              $('#letterImg').fadeIn().addClass('animated zoomIn');
+                          },3000);
+
+                             setTimeout(function(){
+                              var audio2 = new Audio('img/A/a.mp3');
+                              audio2.play();
+                          },3500);
+                      }
+                        if(x==2 && y==3){
+                          
+                         x=3;
+                        y=3;
+                        $('#imgContainer').html("<img id='source_image' class='pure-img' src='img/A/image3.jpg'>");
+                      start_puzzle(x,y);
+                       $('.pure-img').css({
+                              'outline':'6px solid '+borderColor3,
+                              'border':'2px solid '+borderColor3
+                            });
+
+                          body.css({'background':'url(commonImg/back3.png)','background-size': 'cover',
+                              'background-repeat-x': 'repeat',
+                              'background-attachment': 'fixed',
+                              'transition':'all 0.5s'
+                          });
+                      }
+                      
+                      if(x==2 && y==2){
+                        
+                        x=2;
+                        y=3;
+                        $('#imgContainer').html("<img id='source_image' class='pure-img' src='img/A/image2.jpg'>");
+                      start_puzzle(x,y);
+                        $('.pure-img').css({
+                              'outline':'6px solid '+borderColor2,
+                              'border':'2px solid '+borderColor2
+                            });
+
+                         body.css({'background':'url(commonImg/back2.png)','background-size': 'cover',
+                              'background-repeat-x': 'repeat',
+                              'background-attachment': 'fixed',
+                              'transition':'all 0.5s'
+                          });
+                      }
+                    
+
+                       
+
+                    }, 10000);
+                }
+            });
+        }
+
+        $(function(){
+            $('#pile').height($('#source_image').height());
+            start_puzzle(x,y);
+
+            $('.restart-puzzle').click(function(){
+                $('#source_image').snapPuzzle('destroy');
+                start_puzzle(x,y);
+            });
+
+            $(window).resize(function(){
+                $('#pile').height($('#source_image').height());
+                $('#source_image').snapPuzzle('refresh');
+            });
+        });
+
+
+
+            if (~window.location.href.indexOf('http')) {
+                (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+                (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=114593902037957";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                $('#github_social').html('\
+                    <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-snapPuzzle&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+                    <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-snapPuzzle&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+                ');
+            }
+    </script>
+
+    <script>
+        let body = $('body');
+        $('#back1').click(function(){
+            body.css({'background':'url(commonImg/back1.png)','background-size': 'cover',
+                      'background-repeat-x': 'repeat',
+                      'background-attachment': 'fixed',
+                      'transition':'all 0.5s'
+                  });
+        }); 
+
+        $('#back2').click(function(){
+            body.css({'background':'url(commonImg/back2.png)','background-size': 'cover',
+                      'background-repeat-x': 'repeat',
+                      'background-attachment': 'fixed',
+                      'transition':'all 0.5s'
+                  });
+        });
+
+          $('#back3').click(function(){
+            body.css({'background':'url(commonImg/back3.png)','background-size': 'cover',
+                      'background-repeat-x': 'repeat',
+                      'background-attachment': 'fixed',
+                      'transition':'all 0.5s'
+                  });
+        });
+
+            $('#back4').click(function(){
+            body.css({'background':'url(commonImg/back4.png)','background-size': 'cover',
+                      'background-repeat-x': 'repeat',
+                      'background-attachment': 'fixed',
+                      'transition':'all 0.5s'
+                  });
+        });
+
+            $('.headerText h1').text(header);
+            $('.pure-img').css({
+              'outline':'6px solid '+borderColor,
+              'border':'2px solid '+borderColor
+            });
+    </script>
+</body>
+</html>
